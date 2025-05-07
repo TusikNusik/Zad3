@@ -1,0 +1,16 @@
+{% extends 'trasy/base.html' %}
+
+{% block title %}
+Add List page
+{% endblock %}
+
+
+{% block list %} 
+    <h1> Add new list here: </h1>
+    <form method="post" enctype="multipart/form-data" action="/route/addList" class="form-send">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" name="Save" class="blue-button">Add List</button>
+    </form>
+
+{% endblock%}

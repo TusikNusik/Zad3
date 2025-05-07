@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html> 
+
+<html>
+
+    <head>
+        <title>{% block title %} Main Page {% endblock %}</title>
+
+        <link href="{% static 'trasy/styles.css' %}" rel="stylesheet">
+    </head>
+
+
+    <body>
+        <div class="upper-sidebar">
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+                <button type="submit" class="yellow-button">Logout</button>
+            </form>
+
+        </div>
+
+        <div class="sidebar">
+            <ol>
+                <li><a href="/route/addList"> Add list </a></li>
+                <li><a href="/route/points"> All points </a></li>
+                <li><a href="/route/savedProjects"> Your projects</a></li>
+            </ol>
+        </div>
+
+
+        <div class="rest">
+            {% if user.is_authenticated %}
+                {% block list %}
+                <p> WELCOME TO THE PAGE </p>
+                {% endblock %}
+            {% else %}
+                {% block log %}
+                <a href="{% url 'login' %}">Log in</a>
+                {% endblock %}
+            {% endif %}
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,14 @@
+{% extends 'trasy/base.html' %}
+
+{% block title %}
+All projects
+{% endblock %}
+
+
+{% block list %} 
+    <ol>
+        {% for item in user_lists %}
+            <li><a href="/route/addPoint/{{item.id}}">{{item.name}}</a></li>
+        {% endfor %}
+    </ol>
+{% endblock%}

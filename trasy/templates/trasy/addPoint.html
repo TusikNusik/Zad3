@@ -17,7 +17,7 @@ Point List Adding
                 {% if item.included == True %}
                     <li><input type="checkbox" value="included" name="{{item.id}}" checked>{{item}}</li>
                 {% else %}
-                    <li><input type="checkbox" value="included" name="{{item.id}}">{{item}}</li>
+                    <li><input type="checkbox" value="excluded" name="{{item.id}}">{{item}}</li>
                 {% endif %}
             {% endfor %}
 
